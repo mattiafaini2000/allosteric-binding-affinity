@@ -1,0 +1,14 @@
+# ASD/RCSB/ChEMBL discovery and cache handling
+requests
+
+# Ligand identity and prepared-structure workflows
+rdkit
+biopandas
+openbabel-wheel
+
+# Feature tables and optional pretrained/retrained baseline diagnostics
+numpy
+pandas
+joblib
+# Preserve compatibility expectations for saved sklearn model artifacts.
+scikit-learn==1.5.1

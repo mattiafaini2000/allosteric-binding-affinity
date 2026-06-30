@@ -1,0 +1,2 @@
+# Preserve the recorded JSON snapshots exactly as supplied.
+results/reference/*.json -text

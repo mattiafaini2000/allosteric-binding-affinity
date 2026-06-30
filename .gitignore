@@ -1,0 +1,41 @@
+# ASD raw archives, extracted XML/TXT data, and derived local subsets
+# stay local and are not redistributed from this repository.
+data/raw/
+data/interim/
+
+# External implementation repo kept as local reference unless explicitly vendored.
+DrugWise-Implementation-main/
+
+# Local Python/runtime cache.
+__pycache__/
+*.py[cod]
+
+# Local backups, caches, generated runs, and sensitive inputs.
+.originals/
+.local/
+.cache/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.env.*
+*.tmp
+*.log
+outputs/
+runs/
+features/
+models/
+checkpoints/
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.mmap
+*.memmap
+*.tar
+*.tar.gz
+*.zip
+/2026.06.05.730001v1.full.pdf
