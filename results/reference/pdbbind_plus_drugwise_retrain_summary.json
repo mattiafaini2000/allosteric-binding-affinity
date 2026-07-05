@@ -1,0 +1,120 @@
+{
+  "dataset": {
+    "core_test_rows": 285,
+    "general_train_rows": 19158,
+    "refined_rows": 5316,
+    "refined_train_rows": 5050,
+    "v2020_general_rows": 19443
+  },
+  "features": {
+    "error_rows": 1,
+    "feature_count": 11000,
+    "ok_rows": 19442,
+    "parameter_sets": {
+      "lorentz_tau0p5_power5": {
+        "cutoff": 6.0,
+        "kernel_type": "lorentz_kernel",
+        "power": 5.0,
+        "tau": 0.5
+      },
+      "lorentz_tau1p5_power2p5": {
+        "cutoff": 6.0,
+        "kernel_type": "lorentz_kernel",
+        "power": 2.5,
+        "tau": 1.5
+      }
+    },
+    "suffix_counts": {
+      "unsuffixed": 9902,
+      "x": 591,
+      "y": 507
+    }
+  },
+  "generated_at_utc": "2026-07-01T19:23:49+00:00",
+  "inputs": {
+    "core_csv": "DrugWise-Implementation-main/data/CASF_2016_CoreSet.csv",
+    "drugwise_dir": "DrugWise-Implementation-main",
+    "model": "DrugWise-Implementation-main/model/pretraiened_ggl_mb_score.pkl",
+    "pdbbind_plus_archives": [
+      "data/raw/pdbbind_plus/PDBbind_v2020_refined.tar.gz",
+      "data/raw/pdbbind_plus/PDBbind_v2020_other_PL.tar.gz"
+    ],
+    "v2020_general_csv": "DrugWise-Implementation-main/data/PDBbindv2020_General.csv"
+  },
+  "outputs": {
+    "dataset_tsv": "data/interim/drugwise_paper_retrain/pdbbind_v2020/pdbbind_v2020_paper_dataset.tsv",
+    "feature_dir": "data/interim/drugwise_paper_retrain/pdbbind_v2020/features",
+    "feature_status_tsv": "data/interim/drugwise_paper_retrain/pdbbind_v2020/features/feature_status.tsv",
+    "preparation_tsv": "data/interim/drugwise_paper_retrain/pdbbind_v2020/pdbbind_v2020_pdbbind_plus_preparation_status.tsv",
+    "summary_json": "reports/discovery/pdbbind_plus_drugwise_retrain_summary.json",
+    "summary_md": "reports/discovery/pdbbind_plus_drugwise_retrain_summary.md"
+  },
+  "preparation": {
+    "missing_rows": 0,
+    "prepared_rows": 19443,
+    "source_counts": {
+      "pdbbind_plus_v2020_other_pl": 14127,
+      "pdbbind_plus_v2020_refined": 5316
+    },
+    "status_counts": {
+      "prepared": 19443
+    }
+  },
+  "training": {
+    "feature_suffix_counts": {
+      "unsuffixed": 9902,
+      "x": 591,
+      "y": 507
+    },
+    "fit_seconds": 5984.632146120071,
+    "fusion_variant": "x_default_y_readme_unsuff_default",
+    "metrics": {
+      "test_core": {
+        "mae": 0.8951635795208966,
+        "n": 285,
+        "pearson": 0.8674118977875891,
+        "rmse": 1.165034491039347
+      },
+      "train": {
+        "mae": 0.06340421038220767,
+        "n": 19157,
+        "pearson": 0.9992521124321343,
+        "rmse": 0.07978261803916674
+      }
+    },
+    "model_hyperparameters": {
+      "alpha": 0.9,
+      "ccp_alpha": 0.0,
+      "criterion": "friedman_mse",
+      "init": null,
+      "learning_rate": 0.005,
+      "loss": "squared_error",
+      "max_depth": 8,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "n_estimators": 20000,
+      "n_iter_no_change": null,
+      "random_state": 42,
+      "subsample": 0.7,
+      "tol": 0.0001,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "model_path": "data/interim/drugwise_paper_retrain/pdbbind_v2020/models/is_general_train_x_default_y_readme_unsuff_default_gbr.pkl",
+    "prediction_tsv": "data/interim/drugwise_paper_retrain/pdbbind_v2020/predictions/is_general_train_x_default_y_readme_unsuff_default_core_predictions.tsv",
+    "test_rows": 285,
+    "total_train_eval_seconds": 6022.76139497757,
+    "train_rows": 19157,
+    "train_split": "is_general_train",
+    "variant_sources": {
+      "unsuffixed_source": "lorentz_tau0p5_power5",
+      "x_source": "lorentz_tau0p5_power5",
+      "y_source": "lorentz_tau1p5_power2p5"
+    }
+  }
+}

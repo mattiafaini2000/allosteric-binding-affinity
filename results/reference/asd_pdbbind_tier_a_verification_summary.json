@@ -1,0 +1,84 @@
+{
+  "generated_at_utc": "2026-06-28T10:34:05.451069+00:00",
+  "inputs": {
+    "asd_archive": "data\\raw\\asd\\archives\\ASD_Release_202309_AS.tar.gz",
+    "pdbbind_csv": "DrugWise-Implementation-main\\data\\PDBbindv2020_General.csv",
+    "pdbbind_plus_cache": "data\\interim\\pdbbind\\pdbbind_plus_browser_by_pdb.json",
+    "rcsb_ligand_evidence_cache": "data\\interim\\pdbbind\\rcsb_ligand_evidence_by_pdb.json",
+    "status_tsv": "data\\interim\\pdbbind\\asd_pdbbind_v2020_tier_a_status.tsv"
+  },
+  "not_tier_a": {
+    "asd_rows": 90,
+    "status_counts": {
+      "not_tier_a_pdbbind_selected_component_not_in_rcsb_entry": 7,
+      "not_tier_a_pdbbind_selected_ligand_differs_from_asd_modulator": 66,
+      "not_tier_a_pdbbind_selected_ligand_not_component_or_verified_peptide": 16,
+      "not_tier_a_peptide_ligand_not_uniquely_resolved": 1
+    },
+    "unique_pdb_ids": 85,
+    "unique_target_ids": 45
+  },
+  "notes": [
+    "Tier A rows require ligand-level evidence, not only PDB-ID overlap.",
+    "tier_a_candidate_inferred rows are separated from Tier A because PDBbind+ selected-ligand metadata was unavailable, although RCSB reports one nonpolymer component matching the ASD modulator.",
+    "The local row-level TSV is written under data/interim and is not versioned because it contains ASD/PDBbind-derived row data."
+  ],
+  "pdb_counts": {
+    "has_tier_a_row": 863,
+    "no_tier_a_row": 68
+  },
+  "pdbbind_endpoint_counts_by_asd_row": {
+    "IC50": 488,
+    "Kd": 358,
+    "Ki": 118,
+    "others": 1
+  },
+  "pdbbind_endpoint_counts_by_tier": {
+    "not_tier_a": {
+      "IC50": 26,
+      "Kd": 33,
+      "Ki": 31
+    },
+    "tier_a": {
+      "IC50": 462,
+      "Kd": 325,
+      "Ki": 87,
+      "others": 1
+    },
+    "tier_a_candidate_inferred": {}
+  },
+  "scope": {
+    "matched_asd_rows_evaluated": 965,
+    "matched_unique_pdb_ids_evaluated": 931,
+    "matched_unique_target_ids_evaluated": 245
+  },
+  "status_counts_by_asd_row": {
+    "not_tier_a_pdbbind_selected_component_not_in_rcsb_entry": 7,
+    "not_tier_a_pdbbind_selected_ligand_differs_from_asd_modulator": 66,
+    "not_tier_a_pdbbind_selected_ligand_not_component_or_verified_peptide": 16,
+    "not_tier_a_peptide_ligand_not_uniquely_resolved": 1,
+    "tier_a_verified_nonpolymer_component_entry": 36,
+    "tier_a_verified_nonpolymer_component_instance": 814,
+    "tier_a_verified_peptide_polymer_chain_length": 25
+  },
+  "tier_a": {
+    "asd_rows": 875,
+    "status_counts": {
+      "tier_a_verified_nonpolymer_component_entry": 36,
+      "tier_a_verified_nonpolymer_component_instance": 814,
+      "tier_a_verified_peptide_polymer_chain_length": 25
+    },
+    "unique_pdb_ids": 863,
+    "unique_target_ids": 226
+  },
+  "tier_a_candidate_inferred": {
+    "asd_rows": 0,
+    "status_counts": {},
+    "unique_pdb_ids": 0,
+    "unique_target_ids": 0
+  },
+  "tier_counts_by_asd_row": {
+    "not_tier_a": 90,
+    "tier_a": 875
+  }
+}

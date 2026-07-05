@@ -1,0 +1,57 @@
+{
+  "generated_at_utc": "2026-07-01T20:27:15+00:00",
+  "purpose": "Evaluate the retrained PDBbind v2020 DrugWise/GMI reconstruction on ASD Tier-A rows that overlap the paper Appendix D/core-test set.",
+  "inputs": {
+    "retrained_core_predictions_tsv": "data/interim/drugwise_paper_retrain_pdbbind_v2020_core_predictions.tsv",
+    "asd_drugwise_overlap_tsv": "data/interim/drugwise/asd_drugwise_test_set_prediction_overlap.tsv",
+    "retrained_model_source": "data/interim/drugwise_paper_retrain/pdbbind_v2020/models/is_general_train_x_default_y_readme_unsuff_default_gbr.pkl"
+  },
+  "filters": {
+    "prediction_dataset": "pdbbind_v2020_appendix_d",
+    "tier": "tier_a"
+  },
+  "counts": {
+    "rows": 21,
+    "unique_pdb_ids": 20,
+    "missing_retrained_predictions": 0
+  },
+  "metrics": {
+    "row_weighted_21_asd_rows": {
+      "paper_appendix": {
+        "rows": 21,
+        "unique_pdb_ids": 20,
+        "pearson": 0.921572697202913,
+        "mae": 0.6880952380952381,
+        "rmse": 0.8804138637189733
+      },
+      "retrained_pdbbind_v2020": {
+        "rows": 21,
+        "unique_pdb_ids": 20,
+        "pearson": 0.9029219902851912,
+        "mae": 0.7124434897826459,
+        "rmse": 0.9412131838756692
+      }
+    },
+    "unique_pdb_20_ids": {
+      "paper_appendix": {
+        "rows": 20,
+        "unique_pdb_ids": 20,
+        "pearson": 0.9153757959242361,
+        "mae": 0.6984999999999998,
+        "rmse": 0.8957482905370234
+      },
+      "retrained_pdbbind_v2020": {
+        "rows": 20,
+        "unique_pdb_ids": 20,
+        "pearson": 0.8944183516257047,
+        "mae": 0.7220229393130749,
+        "rmse": 0.9573985063237512
+      }
+    }
+  },
+  "outputs": {
+    "row_level_tsv": "data/interim/drugwise/asd_tier_a_retrained_pdbbind_v2020_overlap_predictions.tsv",
+    "summary_json": "reports/discovery/asd_tier_a_retrained_pdbbind_v2020_overlap_summary.json",
+    "summary_md": "reports/discovery/asd_tier_a_retrained_pdbbind_v2020_overlap_summary.md"
+  }
+}

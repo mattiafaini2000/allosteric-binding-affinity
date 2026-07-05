@@ -1,0 +1,125 @@
+{
+  "combined_tier_b": {
+    "bindingdb_endpoint_unknown_source_rows": 2,
+    "source_overlap_by_asd_row": {
+      "bindingdb": 51,
+      "bindingdb+bindingdb_derived+chembl": 2,
+      "bindingdb+chembl": 328,
+      "chembl": 268
+    },
+    "source_rows": 981,
+    "strict_binding_kd_ki_source_rows": 325,
+    "strict_binding_kd_ki_unique_asd_rows": 220,
+    "strict_binding_kd_ki_unique_pdb_ids": 217,
+    "strict_binding_kd_ki_unique_target_ids": 68,
+    "unique_asd_rows": 649,
+    "unique_pdb_ids": 637,
+    "unique_target_ids": 144
+  },
+  "generated_at_utc": "2026-06-28T11:53:33.462567+00:00",
+  "inputs": {
+    "asd_archive": "data\\raw\\asd\\archives\\ASD_Release_202309_AS.tar.gz",
+    "bindingdb_cutoff_nm": 1000000,
+    "bindingdb_smiles_inchikey_cache": "data\\interim\\ligand_target\\bindingdb_smiles_inchikey_by_smiles.json",
+    "bindingdb_uniprot_cache": "data\\interim\\ligand_target\\bindingdb_by_uniprot.json",
+    "chembl_cache_dir": "data\\interim\\chembl",
+    "drugwise_bdb_csv": "DrugWise-Implementation-main\\data\\BDB2020+.csv",
+    "status_tsv": "data\\interim\\ligand_target\\asd_chembl_bindingdb_tier_b_status.tsv",
+    "verified_tsv": "data\\interim\\ligand_target\\asd_chembl_bindingdb_tier_b_verified_labels.tsv"
+  },
+  "notes": [
+    "Tier B means exact ligand-target evidence, not exact PDB-complex or pose evidence.",
+    "ChEMBL Tier-B rows require RCSB ligand InChIKey to ChEMBL molecule mapping, ASD UniProt to ChEMBL target mapping, and at least one pChEMBL activity.",
+    "Full BindingDB Tier-B rows query BindingDB by ASD UniProt, convert returned BindingDB SMILES to InChIKey with RDKit, and require an exact match to the ASD/RCSB ligand InChIKey.",
+    "BindingDB-derived Tier-B rows use the local DrugWise BDB2020+ file and require BindingDB-derived SMILES to match the ASD/RCSB InChIKey plus target sequence agreement with ASD UniProt.",
+    "BindingDB-derived rows keep endpoint_type=unknown because the local BDB2020+ file does not preserve the original BindingDB endpoint type.",
+    "The local row-level TSVs are written under data/interim and are not versioned because they contain ASD/ChEMBL/BindingDB-derived row data."
+  ],
+  "scope": {
+    "bindingdb_derived_status_rows": 2,
+    "bindingdb_status_rows": 3102,
+    "chembl_status_rows": 3102,
+    "total_status_rows": 6206
+  },
+  "sources": {
+    "bindingdb": {
+      "evaluated_rows": 3102,
+      "status_counts": {
+        "not_tier_b_bindingdb_no_asd_uniprot": 14,
+        "not_tier_b_bindingdb_no_component_like_asd_alias": 28,
+        "not_tier_b_bindingdb_no_ligand_inchikey_match": 1673,
+        "not_tier_b_bindingdb_no_rcsb_ligand_inchikey": 38,
+        "not_tier_b_bindingdb_no_target_records": 968,
+        "tier_b_bindingdb_exact_ligand_target_binding": 115,
+        "tier_b_bindingdb_exact_ligand_target_potency_or_functional": 266
+      },
+      "tier_b": {
+        "asd_rows": 381,
+        "endpoint_row_counts": {
+          "EC50": 54,
+          "IC50": 290,
+          "Kd": 78,
+          "Ki": 58
+        },
+        "potency_or_functional_rows": 266,
+        "strict_binding_kd_ki_rows": 115,
+        "unique_pdb_ids": 375,
+        "unique_target_ids": 112
+      },
+      "tier_counts": {
+        "not_tier_b": 2721,
+        "tier_b": 381
+      }
+    },
+    "bindingdb_derived": {
+      "evaluated_rows": 2,
+      "status_counts": {
+        "tier_b_bindingdb_derived_exact_ligand_target_endpoint_unknown": 2
+      },
+      "tier_b": {
+        "asd_rows": 2,
+        "endpoint_row_counts": {
+          "unknown": 2
+        },
+        "potency_or_functional_rows": 0,
+        "strict_binding_kd_ki_rows": 0,
+        "unique_pdb_ids": 2,
+        "unique_target_ids": 1
+      },
+      "tier_counts": {
+        "tier_b": 2
+      }
+    },
+    "chembl": {
+      "evaluated_rows": 3102,
+      "status_counts": {
+        "not_tier_b_chembl_no_asd_uniprot": 14,
+        "not_tier_b_chembl_no_component_like_asd_alias": 28,
+        "not_tier_b_chembl_no_molecule_for_ligand_inchikey": 1019,
+        "not_tier_b_chembl_no_rcsb_ligand_inchikey": 38,
+        "not_tier_b_chembl_no_target_for_asd_uniprot": 629,
+        "not_tier_b_chembl_no_usable_activity_after_exact_mapping": 776,
+        "tier_b_chembl_exact_ligand_target_binding": 210,
+        "tier_b_chembl_exact_ligand_target_potency_or_functional": 388
+      },
+      "tier_b": {
+        "asd_rows": 598,
+        "endpoint_row_counts": {
+          "AC50": 3,
+          "EC50": 134,
+          "IC50": 473,
+          "Kd": 151,
+          "Ki": 89
+        },
+        "potency_or_functional_rows": 388,
+        "strict_binding_kd_ki_rows": 210,
+        "unique_pdb_ids": 587,
+        "unique_target_ids": 132
+      },
+      "tier_counts": {
+        "not_tier_b": 2504,
+        "tier_b": 598
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "created_at": "2026-06-29T13:43:39.728700+00:00",
+  "hitlead": {
+    "domain_modulator_keys_found_in_online_domain_expansion": 5185,
+    "domain_modulator_keys_missing_from_online_domain_expansion": 5,
+    "endpoint_counts": {
+      "AC50": 26,
+      "EC50": 2374,
+      "IC50": 2750,
+      "Kd": 38,
+      "Ki": 4,
+      "missing": 51
+    },
+    "numeric_activity_rows": 5192,
+    "online_domain_rows_with_hitlead_activity": 5251,
+    "online_domain_rows_with_hitlead_numeric_activity": 5200,
+    "online_domain_rows_with_hitlead_strict_binding": 39,
+    "online_hitlead_unique_modulators": 4845,
+    "online_hitlead_unique_target_domains": 81,
+    "rows": 5243,
+    "strict_binding_kd_ki_rows": 42,
+    "unique_domain_modulator_keys": 5190,
+    "unique_modulators": 4848,
+    "unique_target_domains": 82
+  },
+  "hitlead_pdbbind_overlap": {
+    "hitlead_compounds_with_pdbbind_v2020_pdb_id_overlap": 597,
+    "hitlead_domain_rows": 5251,
+    "hitlead_exact_endpoint_counts": {
+      "IC50": 3,
+      "Ki": 1
+    },
+    "hitlead_exact_selected_ligand_rows": 4,
+    "hitlead_exact_selected_ligand_unique_compounds": 4,
+    "hitlead_exact_selected_ligand_unique_pdb_ids": 4,
+    "hitlead_rows_with_pdbbind_v2020_pdb_id_overlap": 625,
+    "hitlead_rows_with_valid_target_pdb_id": 5251,
+    "hitlead_unique_pdbbind_overlap_pdb_ids": 18
+  },
+  "inputs": {
+    "asd_hitlead_archive": "data\\raw\\asd\\archives\\ASD_Release_202306_HL.tar.gz",
+    "asd_online_modulators_json": "data\\interim\\asd_online\\asd_online_modulators.json",
+    "asd_online_proteins_json": "data\\interim\\asd_online\\asd_online_proteins.json",
+    "asd_smiles_inchikey_cache": "data\\interim\\asd_online\\asd_online_smiles_inchikey_by_smiles.json",
+    "pdbbind_plus_cache": "data\\interim\\pdbbind\\pdbbind_plus_browser_by_pdb.json",
+    "pdbbind_selected_ligand_chemcomp_cache": "data\\interim\\asd_online\\pdbbind_v2020_selected_ligand_chemcomp_by_id.json",
+    "pdbbind_selected_ligand_smiles_cache": "data\\interim\\asd_online\\pdbbind_v2020_ligand_smiles_inchikey_by_smiles.json",
+    "pdbbind_v2020_csv": "DrugWise-Implementation-main\\data\\PDBbindv2020_General.csv"
+  },
+  "notes": [
+    "ASD online related-protein items are expanded through ASD protein db_serial, not the numeric related item field.",
+    "PDBbind mapping by PDB ID alone is a candidate label only.",
+    "Exact selected-ligand rows require full InChIKey equality between the ASD modulator and the PDBbind-selected ligand identity from PDBbind+ SMILES or RCSB CCD fallback.",
+    "Exact selected-ligand rows are Tier-A-like for the online table, but weaker than AS-archive Tier A because the online modulator table does not provide chain/residue ligand-instance evidence.",
+    "Hit-to-Lead labels are joined by exact ASD target domain and modulator serial.",
+    "Row-level TSVs stay under data/interim and are not versioned."
+  ],
+  "online_asd": {
+    "base_related_items_total": 109073,
+    "base_related_items_with_multiple_domain_matches": 54017,
+    "base_related_items_with_target_serial_match": 109047,
+    "base_related_items_without_target_serial_match": 26,
+    "domain_expanded_rows_with_target_serial_match": 242447,
+    "domain_expanded_status_rows": 242473,
+    "domain_expanded_unique_target_domains": 1784,
+    "domain_expanded_unique_uniprots": 1778,
+    "modulators": 100320,
+    "modulators_with_inchikey": 99537,
+    "modulators_with_smiles": 99960,
+    "proteins": 2422,
+    "unique_protein_db_serials": 2024
+  },
+  "outputs": {
+    "exact_labels_tsv": "data\\interim\\asd_online\\asd_online_pdbbind_exact_labels.tsv",
+    "status_tsv": "data\\interim\\asd_online\\asd_online_pdbbind_mapping_status.tsv",
+    "summary_json": "reports\\discovery\\asd_online_pdbbind_mapping_summary.json",
+    "summary_md": "reports\\discovery\\asd_online_pdbbind_mapping_summary.md"
+  },
+  "pdbbind_mapping": {
+    "base_related_items_with_pdbbind_v2020_pdb_id_overlap": 21813,
+    "compounds_with_pdbbind_v2020_pdb_id_overlap": 20930,
+    "connectivity_match_rows_including_full_matches": 77,
+    "exact_selected_ligand_endpoint_counts": {
+      "IC50": 19,
+      "Kd": 32,
+      "Ki": 9
+    },
+    "exact_selected_ligand_identity_source_counts": {
+      "pdbbind_plus_smiles": 21,
+      "rcsb_chemcomp": 39
+    },
+    "exact_selected_ligand_rows": 60,
+    "exact_selected_ligand_strict_kd_ki_rows": 41,
+    "exact_selected_ligand_unique_compounds": 52,
+    "exact_selected_ligand_unique_pdb_ids": 52,
+    "exact_selected_ligand_unique_target_domains": 54,
+    "exact_selected_ligand_unique_uniprots": 54,
+    "mapping_status_counts": {
+      "exact_pdbbind_selected_ligand_match": 60,
+      "not_in_pdbbind_v2020": 152120,
+      "pdbbind_pdb_overlap_ligand_connectivity_only_match": 17,
+      "pdbbind_pdb_overlap_ligand_mismatch": 26370,
+      "pdbbind_pdb_overlap_no_asd_ligand_inchikey": 262,
+      "pdbbind_pdb_overlap_selected_ligand_inchikey_unavailable": 2039,
+      "target_pdb_field_is_asd_internal_id": 61579,
+      "target_serial_not_found": 26
+    },
+    "mapping_tier_counts": {
+      "not_mapped": 213725,
+      "pdbbind_exact_selected_ligand_target_pdb": 60,
+      "pdbbind_pdb_only_candidate": 28688
+    },
+    "pdbbind_overlap_ligand_identity_source_counts": {
+      "pdbbind_plus_smiles": 20541,
+      "rcsb_chemcomp": 5906,
+      "unavailable": 2301
+    },
+    "pdbbind_v2020_unique_pdb_ids": 19443,
+    "rows_with_pdbbind_v2020_pdb_id_overlap": 28748,
+    "rows_with_valid_target_pdb_id": 180868,
+    "unique_pdbbind_v2020_overlap_pdb_ids": 162,
+    "unique_valid_target_pdb_ids": 1332
+  }
+}

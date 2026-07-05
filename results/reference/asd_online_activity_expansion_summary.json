@@ -1,0 +1,230 @@
+{
+  "as_complex_overlap": {
+    "with_as_complex_key": {
+      "endpoint_counts": {
+        "EC50": 65,
+        "IC50": 338,
+        "Kd": 161,
+        "Ki": 66
+      },
+      "label_source_rows": 630,
+      "strict_binding_label_source_rows": 227,
+      "strict_binding_unique_compounds": 127,
+      "strict_binding_unique_domain_modulator_keys": 133,
+      "unique_compounds": 345,
+      "unique_domain_modulator_keys": 355,
+      "unique_target_domains": 113
+    },
+    "without_as_complex_key": {
+      "endpoint_counts": {
+        "AC50": 84,
+        "EC50": 8305,
+        "IC50": 11714,
+        "Kd": 720,
+        "Ki": 3505
+      },
+      "label_source_rows": 24328,
+      "strict_binding_label_source_rows": 4225,
+      "strict_binding_unique_compounds": 1940,
+      "strict_binding_unique_domain_modulator_keys": 3008,
+      "unique_compounds": 13697,
+      "unique_domain_modulator_keys": 16622,
+      "unique_target_domains": 450
+    }
+  },
+  "cache_stats": {
+    "bindingdb_smiles_status": {
+      "ok": 445204,
+      "parse_error": 74
+    },
+    "bindingdb_target_status": {
+      "error": 16,
+      "missing": 1014,
+      "ok": 1052
+    },
+    "chembl_activity_batch_status": {
+      "missing": 2419,
+      "ok": 1053
+    },
+    "chembl_molecule_status": {
+      "missing": 73399,
+      "ok": 25670
+    },
+    "chembl_target_status": {
+      "missing": 934,
+      "ok": 1148
+    }
+  },
+  "combined_labels": {
+    "compound_rows": 13995,
+    "endpoint_counts": {
+      "AC50": 84,
+      "EC50": 8370,
+      "IC50": 12052,
+      "Kd": 881,
+      "Ki": 3571
+    },
+    "label_source_rows": 24958,
+    "source_overlap_by_compound": {
+      "bindingdb": 1067,
+      "bindingdb+chembl": 5930,
+      "chembl": 6998
+    },
+    "source_overlap_by_interaction": {
+      "bindingdb": 1518,
+      "bindingdb+chembl": 7185,
+      "chembl": 9070
+    },
+    "strict_binding_label_source_rows": 4452,
+    "strict_binding_unique_compounds": 2044,
+    "strict_binding_unique_interactions": 3222,
+    "unique_compounds": 13995,
+    "unique_interactions": 17773,
+    "unique_uniprots": 473
+  },
+  "created_at": "2026-06-29T14:38:46.852553+00:00",
+  "notes": [
+    "Labels require exact ASD online ligand InChIKey and exact ASD online UniProt target.",
+    "ASD online related-protein items are expanded through ASD protein db_serial/domain, not the numeric related-protein field.",
+    "ChEMBL labels require exact ChEMBL molecule and target mapping and pChEMBL endpoints.",
+    "BindingDB labels require a target-side UniProt query and exact returned-ligand InChIKey match.",
+    "This is ligand-target activity evidence, not exact experimental complex or pose evidence.",
+    "Row-level TSVs stay under data/interim and are not versioned."
+  ],
+  "online_asd": {
+    "base_related_items": 109073,
+    "base_related_items_with_multiple_domain_matches": 54017,
+    "base_related_items_without_target_serial_match": 26,
+    "domain_expanded_interactions": 242473,
+    "domain_expanded_rows_with_as_complex_key": 1891,
+    "domain_expanded_rows_with_target_serial_match": 242447,
+    "domain_expanded_rows_without_as_complex_key": 240582,
+    "interactions_with_uniprot": 242366,
+    "modulators": 100320,
+    "modulators_with_inchikey": 99537,
+    "modulators_with_smiles": 99960,
+    "proteins": 2422,
+    "unique_uniprots": 1778
+  },
+  "outputs": {
+    "compound_labels_tsv": "data\\interim\\asd_online\\asd_online_compounds_with_activity.tsv",
+    "interaction_labels_tsv": "data\\interim\\asd_online\\asd_online_chembl_bindingdb_activity_labels.tsv",
+    "interactions_tsv": "data\\interim\\asd_online\\asd_online_interactions.tsv"
+  },
+  "parameters": {
+    "activity_types": [
+      "Kd",
+      "Ki",
+      "IC50",
+      "EC50",
+      "AC50"
+    ],
+    "asd_as_archive": "data\\raw\\asd\\archives\\ASD_Release_202309_AS.tar.gz",
+    "asd_modulators_url": "https://mdl.shsmu.edu.cn/ASD/BrowseModulators",
+    "asd_proteins_url": "https://mdl.shsmu.edu.cn/ASD/BrowseProteins",
+    "bindingdb_cutoff_nm": 1000000,
+    "max_modulators": null,
+    "strict_binding_types": [
+      "Kd",
+      "Ki"
+    ]
+  },
+  "sources": {
+    "bindingdb": {
+      "endpoint_counts": {
+        "EC50": 2791,
+        "IC50": 4129,
+        "Kd": 291,
+        "Ki": 1492
+      },
+      "label_source_rows": 8703,
+      "strict_binding_label_source_rows": 1783,
+      "strict_binding_unique_compounds": 1128,
+      "strict_binding_unique_domain_modulator_keys": 1732,
+      "strict_binding_unique_interactions": 1783,
+      "unique_compounds": 6997,
+      "unique_domain_modulator_keys": 8116,
+      "unique_interactions": 8703,
+      "unique_uniprots": 372,
+      "with_as_complex_key": {
+        "endpoint_counts": {
+          "EC50": 19,
+          "IC50": 146,
+          "Kd": 50,
+          "Ki": 26
+        },
+        "label_source_rows": 241,
+        "strict_binding_label_source_rows": 76,
+        "strict_binding_unique_compounds": 62,
+        "strict_binding_unique_domain_modulator_keys": 62,
+        "unique_compounds": 200,
+        "unique_domain_modulator_keys": 203,
+        "unique_target_domains": 81
+      },
+      "without_as_complex_key": {
+        "endpoint_counts": {
+          "EC50": 2772,
+          "IC50": 3983,
+          "Kd": 241,
+          "Ki": 1466
+        },
+        "label_source_rows": 8462,
+        "strict_binding_label_source_rows": 1707,
+        "strict_binding_unique_compounds": 1070,
+        "strict_binding_unique_domain_modulator_keys": 1670,
+        "unique_compounds": 6819,
+        "unique_domain_modulator_keys": 7913,
+        "unique_target_domains": 353
+      }
+    },
+    "chembl": {
+      "endpoint_counts": {
+        "AC50": 84,
+        "EC50": 5579,
+        "IC50": 7923,
+        "Kd": 590,
+        "Ki": 2079
+      },
+      "label_source_rows": 16255,
+      "strict_binding_label_source_rows": 2669,
+      "strict_binding_unique_compounds": 1765,
+      "strict_binding_unique_domain_modulator_keys": 2593,
+      "strict_binding_unique_interactions": 2669,
+      "unique_compounds": 12928,
+      "unique_domain_modulator_keys": 15481,
+      "unique_interactions": 16255,
+      "unique_uniprots": 455,
+      "with_as_complex_key": {
+        "endpoint_counts": {
+          "EC50": 46,
+          "IC50": 192,
+          "Kd": 111,
+          "Ki": 40
+        },
+        "label_source_rows": 389,
+        "strict_binding_label_source_rows": 151,
+        "strict_binding_unique_compounds": 123,
+        "strict_binding_unique_domain_modulator_keys": 129,
+        "unique_compounds": 321,
+        "unique_domain_modulator_keys": 331,
+        "unique_target_domains": 104
+      },
+      "without_as_complex_key": {
+        "endpoint_counts": {
+          "AC50": 84,
+          "EC50": 5533,
+          "IC50": 7731,
+          "Kd": 479,
+          "Ki": 2039
+        },
+        "label_source_rows": 15866,
+        "strict_binding_label_source_rows": 2518,
+        "strict_binding_unique_compounds": 1665,
+        "strict_binding_unique_domain_modulator_keys": 2464,
+        "unique_compounds": 12652,
+        "unique_domain_modulator_keys": 15150,
+        "unique_target_domains": 433
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "asd_site_rows": 3102,
+    "rcsb_resolved_pdb_ids": 2955,
+    "unique_allosteric_pdb_ids": 2963,
+    "unique_asd_target_ids": 677,
+    "xray_site_rows": 2990,
+    "xray_unique_asd_target_ids": 635,
+    "xray_unique_pdb_ids": 2858
+  },
+  "filter_rule": "Keep ASD AS rows when RCSB exptl.method contains 'X-RAY DIFFRACTION'.",
+  "generated_at_utc": "2026-06-27T22:39:13+00:00",
+  "inputs": {
+    "asd_archive": "data\\raw\\asd\\archives\\ASD_Release_202309_AS.tar.gz",
+    "asd_site_member": "ASD_Release_202309_AS.txt",
+    "rcsb_methods_cache": "data\\interim\\asd\\rcsb_pdb_methods.tsv"
+  },
+  "outputs": {
+    "summary_json": "reports\\discovery\\asd_xray_complexes_summary.json",
+    "xray_subset_tsv": "data\\interim\\asd\\asd_xray_complexes.tsv"
+  },
+  "rcsb_method_distribution_by_unique_pdb": {
+    "ELECTRON MICROSCOPY": 90,
+    "SOLUTION NMR": 6,
+    "SOLUTION NMR;SOLID-STATE NMR": 1,
+    "UNRESOLVED": 8,
+    "X-RAY DIFFRACTION": 2857,
+    "X-RAY DIFFRACTION;SOLUTION SCATTERING": 1
+  },
+  "sources": {
+    "asd_archive_url": "https://mdl.shsmu.edu.cn/ASD2023Common/static_file/archive_2023/ASD_Release_202309_AS.tar.gz",
+    "asd_download_page": "https://mdl.shsmu.edu.cn/ASD/module/download/download.jsp?tabIndex=1",
+    "rcsb_graphql_url": "https://data.rcsb.org/graphql"
+  }
+}
